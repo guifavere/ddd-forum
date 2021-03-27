@@ -1,6 +1,6 @@
 import { UserEmail } from './userEmail';
-import { UserName } from './useName';
-import { UserId } from './userid';
+import { UserName } from './userName';
+import { UserId } from './userId';
 import { UserPassword } from './userPassword';
 import { JWTToken, RefreshToken } from './jwt';
 import { UserCreated } from './events/userCreated';
