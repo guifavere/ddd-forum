@@ -24,6 +24,7 @@ export class DomainEvents {
 
     this.markedAggregates.splice(index, 1);
   }
+
   private static findMarkedAggregateByID(id: UniqueEntityID): AggregateRoot<any> {
     let found: AggregateRoot<any> = null;
 
