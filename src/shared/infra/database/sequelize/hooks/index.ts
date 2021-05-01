@@ -17,17 +17,17 @@ const dispatchEventsCallback = (model: any, primaryKeyField: string) => {
   BaseUser.addHook('afterSave', (m: any) => dispatchEventsCallback(m, 'base_user_id'));
   BaseUser.addHook('afterUpsert', (m: any) => dispatchEventsCallback(m, 'base_user_id'));
 
-  Member.addhook('afterCreate', (m: any) => dispatchEventsCallback(m, 'member_id'));
-  Member.addhook('afterDestroy', (m: any) => dispatchEventsCallback(m, 'member_id'));
-  Member.addhook('afterUpdate', (m: any) => dispatchEventsCallback(m, 'member_id'));
-  Member.addhook('afterSave', (m: any) => dispatchEventsCallback(m, 'member_id'));
-  Member.addhook('afterUpsert', (m: any) => dispatchEventsCallback(m, 'member_id'));
+  Member.addHook('afterCreate', (m: any) => dispatchEventsCallback(m, 'member_id'));
+  Member.addHook('afterDestroy', (m: any) => dispatchEventsCallback(m, 'member_id'));
+  Member.addHook('afterUpdate', (m: any) => dispatchEventsCallback(m, 'member_id'));
+  Member.addHook('afterSave', (m: any) => dispatchEventsCallback(m, 'member_id'));
+  Member.addHook('afterUpsert', (m: any) => dispatchEventsCallback(m, 'member_id'));
 
-  Post.addhook('afterCreate', (m: any) => dispatchEventsCallback(m, 'post_id'));
-  Post.addhook('afterDestroy', (m: any) => dispatchEventsCallback(m, 'post_id'));
-  Post.addhook('afterUpdate', (m: any) => dispatchEventsCallback(m, 'post_id'));
-  Post.addhook('afterSave', (m: any) => dispatchEventsCallback(m, 'post_id'));
-  Post.addhook('afterUpsert', (m: any) => dispatchEventsCallback(m, 'post_id'));
+  Post.addHook('afterCreate', (m: any) => dispatchEventsCallback(m, 'post_id'));
+  Post.addHook('afterDestroy', (m: any) => dispatchEventsCallback(m, 'post_id'));
+  Post.addHook('afterUpdate', (m: any) => dispatchEventsCallback(m, 'post_id'));
+  Post.addHook('afterSave', (m: any) => dispatchEventsCallback(m, 'post_id'));
+  Post.addHook('afterUpsert', (m: any) => dispatchEventsCallback(m, 'post_id'));
 
   console.log('[Hooks]: Sequelize hooks setup.');
 })();

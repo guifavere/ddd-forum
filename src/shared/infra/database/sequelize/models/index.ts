@@ -3,7 +3,7 @@ import * as path from 'path';
 import config from '../config/config';
 import * as Sequelize from 'sequelize';
 
-const sequelize = config.connections;
+const sequelize = config.connection;
 
 function toCamelCase(str) {
   const _ = str.indexOf('_');
@@ -12,7 +12,7 @@ function toCamelCase(str) {
     return toCamelCase(str.substring(0, _)
       + str.substring(_ + 1)
         .substring(0, 1)
-        .toUppercase()
+        .toUpperCase()
       + str.substring(_ + 2)
     );
   }
@@ -27,7 +27,7 @@ const createModels = () => {
   if (modelsLoaded) return models;
 
   // get all models
-  const modelsList = fs.readdirSync(path.resolve(__dirname, '/'))
+  const modelsList = fs.readdirSync(path.resolve(__dirname, './'))
     .filter(t => (~t.indexOf('.ts') || ~t.indexOf('.js')) && !~t.indexOf('index') && !~t.indexOf('.map'))
     .map(model => sequelize.import(__dirname + '/' + model));
 
